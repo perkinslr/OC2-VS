@@ -114,7 +114,7 @@ public final class ShipOperationsModuleDevice extends AbstractItemRPCDevice impl
     @Callback(name = "getOmega")
     public Map<String, Double> getOmega() {
         verify();
-        var o = this.ship.getOmega();
+        final var o = this.ship.getOmega();
         return Map.of(
                       "x", o.x(),
                       "y", o.y(),
@@ -125,7 +125,7 @@ public final class ShipOperationsModuleDevice extends AbstractItemRPCDevice impl
     @Callback(name = "getEulerAnglesXYZ")
     public Map<String, Double> getEulerAnglesXYZ() {
         verify();
-        var o = new Vector3d();
+        final var o = new Vector3d();
         this.ship.getTransform().getShipToWorldRotation().getEulerAnglesXYZ(o);
         return Map.of(
                       "x", o.x(),
@@ -139,7 +139,7 @@ public final class ShipOperationsModuleDevice extends AbstractItemRPCDevice impl
     @Callback(name = "getScale")
     public Map<String, Double> getScale() {
         verify();
-        var o = this.ship.getTransform().getShipToWorldScaling();
+        final var o = this.ship.getTransform().getShipToWorldScaling();
         return Map.of(
                       "x", o.x(),
                       "y", o.y(),
@@ -151,7 +151,7 @@ public final class ShipOperationsModuleDevice extends AbstractItemRPCDevice impl
     @Callback(name = "getShipyardPosition")
     public Map<String, Double> getShipyardPosition() {
         verify();
-        var o = this.ship.getTransform().getPositionInShip();
+        final var o = this.ship.getTransform().getPositionInShip();
         return Map.of(
                       "x", o.x(),
                       "y", o.y(),
@@ -176,7 +176,7 @@ public final class ShipOperationsModuleDevice extends AbstractItemRPCDevice impl
 
     @Callback(name = "getVelocity")
     public Map<String, Double> getVelocity() {
-        var o = this.ship.getVelocity();
+        final var o = this.ship.getVelocity();
         return Map.of(
                       "x", o.x(),
                       "y", o.y(),
@@ -187,7 +187,7 @@ public final class ShipOperationsModuleDevice extends AbstractItemRPCDevice impl
 
     @Callback(name = "getWorldspacePosition")
     public Map<String, Double> getWorldspacePosition() {
-        var o = this.ship.getTransform().getPositionInWorld();
+        final var o = this.ship.getTransform().getPositionInWorld();
         return Map.of(
                       "x", o.x(),
                       "y", o.y(),
@@ -202,7 +202,7 @@ public final class ShipOperationsModuleDevice extends AbstractItemRPCDevice impl
     }
 
     @Callback(name = "setName")
-    public void setName(String name) {
+    public void setName(final String name) {
         this.ship.setSlug(name); 
     }
 
@@ -240,52 +240,52 @@ public final class ShipOperationsModuleDevice extends AbstractItemRPCDevice impl
             .returnValueDescription("true if on a ship, otherwise false.");
         visitor.visitCallback("getId")
             .description("Gives the numeric id of the ship")
-        .returnValueDescription("The numeric id of the ship")
+            .returnValueDescription("The numeric id of the ship")
             ;
         visitor.visitCallback("getMass")
             .description("Returns the mass of the ship")
-        .returnValueDescription("The mass of the ship")
+            .returnValueDescription("The mass of the ship")
             ;
         visitor.visitCallback("getName")
             .description("Returns the name of the ship")
-        .returnValueDescription("The name of the ship")
+            .returnValueDescription("The name of the ship")
             ;
         visitor.visitCallback("getOmega")
             .description("Returns the omega of the ship as Euler angles")
-        .returnValueDescription("The rotational velocity of the ship")
+            .returnValueDescription("The rotational velocity of the ship")
             ;
         visitor.visitCallback("getEulerAnglesXYZ")
             .description("Returns the rotation of the ship as euler angles")
-        .returnValueDescription("The rotation of the ship")
+            .returnValueDescription("The rotation of the ship")
             ;
         visitor.visitCallback("getScale")
             .description("Returns the scale factor of the ship")
-        .returnValueDescription("The scale of the ship")
+            .returnValueDescription("The scale of the ship")
             ;
         visitor.visitCallback("getShipyardPosition")
             .description("Returns the position of the ship in the shipyard")
-        .returnValueDescription("The position of the ship")
+            .returnValueDescription("The position of the ship")
             ;
         visitor.visitCallback("getSize")
             .description("Returns the AABB size of the ship")
-        .returnValueDescription("The AABB size of the ship")
+            .returnValueDescription("The AABB size of the ship")
             ;
         visitor.visitCallback("getVelocity")
             .description("Returns the velocity of the ship")
-        .returnValueDescription("The velocity of the ship")
+            .returnValueDescription("The velocity of the ship")
             ;
 
         visitor.visitCallback("getWorldspacePosition")
             .description("Returns the position of the ship in the world")
-        .returnValueDescription("The position of the ship")
+            .returnValueDescription("The position of the ship")
             ;
         visitor.visitCallback("isStatic")
             .description("Check if the ship is currently an active physics object")
-        .returnValueDescription("false if the ship is asleep")
+            .returnValueDescription("false if the ship is asleep")
             ;
         visitor.visitCallback("getBuoyantfactor")
             .description("If the ship is a PhysShip, gets its buoyancy")
-        .returnValueDescription("The buoyancy factor, -1 if the ship is not a PhysShip")
+            .returnValueDescription("The buoyancy factor, -1 if the ship is not a PhysShip")
             ;
         visitor.visitCallback("setName")
             .description("Sets the name of the ship as a string")

@@ -7,4 +7,6 @@ It requires a patched version of OC2 for computers to correctly start when on a 
 
 ** Building
 OC2 isn't available via maven or similar, so building requires manually putting a reference copy of OC2 in forge/libs/oc2.jar.
-1.19 and 1.18 can use the same reference jar, but 1.20 needs its own, called oc2r.jar
+For 1.19, the file is named oc2.jar,
+for 1.18, the file is named oc2.18.jar
+and 1.20, the file is named oc2.20.jar

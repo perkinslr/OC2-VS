@@ -1,11 +1,11 @@
 package com.lpprogramming.minecraft.oc2_vs;
 
-import li.cil.oc2r.api.bus.device.ItemDevice;
-import li.cil.oc2r.api.bus.device.provider.ItemDeviceQuery;
-import li.cil.oc2r.common.Config;
-import li.cil.oc2r.common.bus.device.provider.util.AbstractItemDeviceProvider;
-import li.cil.oc2r.common.bus.device.rpc.item.InventoryOperationsModuleDevice;
-import li.cil.oc2r.common.capabilities.Capabilities;
+import li.cil.oc2.api.bus.device.ItemDevice;
+import li.cil.oc2.api.bus.device.provider.ItemDeviceQuery;
+import li.cil.oc2.common.Config;
+import li.cil.oc2.common.bus.device.provider.util.AbstractItemDeviceProvider;
+import li.cil.oc2.common.bus.device.rpc.item.InventoryOperationsModuleDevice;
+import li.cil.oc2.common.capabilities.Capabilities;
 
 
 import java.util.Optional;
